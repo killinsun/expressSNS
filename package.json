@@ -1,0 +1,7 @@
+{
+  "name": "expressSNS",
+  "version": "1.0.0",
+  "description": "SNS made by using express and MySQL",
+  "main": "index.js",
+  "license": "MIT"
+}
