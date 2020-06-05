@@ -16,11 +16,11 @@ fs.readdir("uploads", (error) => {
 
 // for uploading image
 const upload = multer({
-  stroage: multer.diskStorage({
-    destination(req, res, cb) {
+  storage: multer.diskStorage({
+    destination(req, file, cb) {
       cb(null, "uploads/");
     },
-    filename(req, res, cb) {
+    filename(req, file, cb) {
       const ext = path.extname(file.originalname);
       cb(null, path.basename(file.originalname, ext) + Date.now() + ext);
     },
@@ -29,7 +29,7 @@ const upload = multer({
 });
 
 router.post("/img", isLoggedIn, upload.single("img"), (req, res) => {
-  console.log(req.file);
+  console.log("file: ", req.file);
   res.json({ url: `/img/${req.file.filename}` });
 });
 
