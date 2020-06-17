@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import dbConfig from "../config/config.json";
+import dbConfig from "../config/config";
 import User from "./user";
 import Post from "./post";
 import Hashtag from "./hashtag";
